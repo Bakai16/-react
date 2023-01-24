@@ -1,0 +1,25 @@
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+
+import App from './App';
+import Appss from './pages/Slide';
+import AppForm from './Forms';
+import AppHeader from './AppHeader/AppHeader';
+
+const Main = () =>{
+    return (
+        <>
+        <Router> 
+            <AppHeader/>
+            <main>
+                <Routes>
+                    <Route path="/" element={<App/>} />
+                    <Route path="form" element={<AppForm/>} />
+                    <Route path="slider" element={<Appss/>} />
+                </Routes>
+            </main>
+        </Router>
+    </>
+    )
+}
+
+export default Main;

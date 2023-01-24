@@ -2,12 +2,7 @@ import {useState, useEffect, useCallback, useMemo, useReducer} from 'react';
 import {NavLink} from 'react-router-dom';
 import {Container} from 'react-bootstrap';
 
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-
-import Form from './Form';
-import AppForm from './Forms';
 import './App.css';
-
 
 const countTotal = (num) =>{
     console.log('counting...');
@@ -143,17 +138,8 @@ function App() {
 
     return (
         <>
-            <Router> 
             <button onClick={() => setSlide(false)}>Click me</button>
             {slider ? <Slider initial={false} /> : null}
-                <Header/>
-                <main>
-                    <Routes>
-                        <Route path="/form" element={<Form/>} />
-                    </Routes>
-                </main>
-                <AppForm/>
-            </Router>
         </>
     );
 }
