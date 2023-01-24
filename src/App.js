@@ -1,5 +1,13 @@
-import {useState, useEffect, useCallback, useMemo, useRef} from 'react';
+import {useState, useEffect, useCallback, useMemo} from 'react';
+import {NavLink} from 'react-router-dom';
 import {Container} from 'react-bootstrap';
+
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+
+import Form from './Form';
+import AppForm from './Forms';
+
+
 import './App.css';
 // class Slider extends Component {
 
@@ -132,7 +140,19 @@ const Slider = (props) => {
     )
 }
 
+const Header = () =>{
+    return(
+        <>
+        <NavLink 
+            end 
+            style={({ isActive }) => ({color: isActive ? '#9f0013' : 'inherit'})}
+            to="/form">Form</NavLink>
+         </>
+    )
+}
+
 const Slide = ({getSomeImages}) =>{
+
     const [images, setImages] = useState([]);
 
     useEffect(() =>{
@@ -148,41 +168,25 @@ const Slide = ({getSomeImages}) =>{
 
 
 
-const Form = () => {
-    const [text, setText] = useState('');
-
-    const myRef = useRef(1);
-
-    useEffect(() =>{
-        myRef.current = text;
-    })
-
-    return (
-        <Container>
-            <form className="w-50 border mt-5 p-3 m-auto">
-                <div className="mb-3">
-                    <label htmlFor="exampleFormControlInput1" className="form-label">Email address</label>
-                    <input onChange={(e) => setText(e.target.value)} type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
-                    </div>
-                    <div className="mb-3">
-                    <label htmlFor="exampleFormControlTextarea1" className="form-label">Example textarea</label>
-                    <textarea value={myRef.current} className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
-            </form>
-        </Container>
-    )
-}
-
 
 function App() {
     const [slider, setSlide] = useState(true);
 
     return (
         <>
+
+
+            <Router> 
             <button onClick={() => setSlide(false)}>Click me</button>
             {slider ? <Slider/> : null}
-
-            <Form/>
+                <Header/>
+                <main>
+                    <Routes>
+                        <Route path="/form" element={<Form/>} />
+                    </Routes>
+                </main>
+                <AppForm/>
+            </Router>
         </>
     );
 }
