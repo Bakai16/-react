@@ -4,6 +4,7 @@ import App from './App';
 import Appss from './pages/Slide';
 import AppForm from './Forms';
 import AppHeader from './AppHeader/AppHeader';
+import OpenModal from './pages/openModal';
 
 const Main = () =>{
     return (
@@ -13,8 +14,9 @@ const Main = () =>{
             <main>
                 <Routes>
                     <Route path="/" element={<App/>} />
-                    <Route path="form" element={<AppForm/>} />
-                    <Route path="slider" element={<Appss/>} />
+                    <Route path="/form" element={<AppForm/>} />
+                    <Route path="/slider" element={<Appss/>} />
+                    <Route path="/modal" element={<OpenModal/>} />
                 </Routes>
             </main>
         </Router>

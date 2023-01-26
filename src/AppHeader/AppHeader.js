@@ -16,6 +16,9 @@ const AppHeader = () => {
                     <li><NavLink 
                             style={({ isActive }) => ({color: isActive ? '#9f0013' : 'inherit'})}
                             to="/slider">Slider НОС</NavLink></li>
+                    <li><NavLink 
+                            style={({ isActive }) => ({color: isActive ? '#9f0013' : 'inherit'})}
+                            to="/modal">Open Modal</NavLink></li>
                 </ul>
             </nav>
         </header>
