@@ -5,6 +5,7 @@ import Appss from './pages/Slide';
 import AppForm from './Forms';
 import AppHeader from './AppHeader/AppHeader';
 import OpenModal from './pages/openModal';
+import FormFormik from './Formik_Form/Form';
 
 const Main = () =>{
     return (
@@ -17,6 +18,7 @@ const Main = () =>{
                     <Route path="/form" element={<AppForm/>} />
                     <Route path="/slider" element={<Appss/>} />
                     <Route path="/modal" element={<OpenModal/>} />
+                    <Route path="/formikform" element={<FormFormik/>} />
                 </Routes>
             </main>
         </Router>
