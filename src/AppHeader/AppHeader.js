@@ -21,6 +21,9 @@ const AppHeader = () => {
                             to="/modal">Open Modal</NavLink></li>
                     <li><NavLink 
                             style={({ isActive }) => ({color: isActive ? '#9f0013' : 'inherit'})}
+                            to="/customform">Custom Form</NavLink></li>
+                    <li><NavLink 
+                            style={({ isActive }) => ({color: isActive ? '#9f0013' : 'inherit'})}
                             to="/formikform">Formik Form</NavLink></li>
                 </ul>
             </nav>
